@@ -1,0 +1,612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Kv4-3c-Iaz">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Приветствую!-->
+        <scene sceneID="WHP-LP-DKR">
+            <objects>
+                <viewController id="pkK-BA-i7G" customClass="ViewController" customModule="newProg" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WlS-Pe-f1l">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgF-Tg-SUi">
+                                <rect key="frame" x="59.666666666666657" y="867" width="311" height="32"/>
+                                <segments>
+                                    <segment title="Главная"/>
+                                    <segment title="Информация"/>
+                                    <segment title="Акций"/>
+                                </segments>
+                                <connections>
+                                    <action selector="switchValues:" destination="pkK-BA-i7G" eventType="valueChanged" id="PG8-mD-DFg"/>
+                                </connections>
+                            </segmentedControl>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zqX-bv-ofx">
+                                <rect key="frame" x="0.0" y="123" width="430" height="744"/>
+                                <connections>
+                                    <segue destination="kgY-M4-ycc" kind="embed" id="yTh-95-QNW"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1uL-2J-Z8O">
+                                <rect key="frame" x="0.0" y="123" width="430" height="744"/>
+                                <connections>
+                                    <segue destination="sWJ-vl-skW" kind="embed" id="FUD-ZQ-pZJ"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YN-qf-bQk">
+                                <rect key="frame" x="0.0" y="123" width="430" height="744"/>
+                                <connections>
+                                    <segue destination="lzn-8t-AHL" kind="embed" id="Ofg-3k-O76"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="imn-mk-yto"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="6YN-qf-bQk" firstAttribute="leading" secondItem="imn-mk-yto" secondAttribute="leading" id="1hb-Uw-d4I"/>
+                            <constraint firstItem="imn-mk-yto" firstAttribute="bottom" secondItem="bgF-Tg-SUi" secondAttribute="bottom" id="DaG-KS-3cv"/>
+                            <constraint firstItem="imn-mk-yto" firstAttribute="trailing" secondItem="6YN-qf-bQk" secondAttribute="trailing" id="E1O-n5-eqS"/>
+                            <constraint firstItem="1uL-2J-Z8O" firstAttribute="top" secondItem="WlS-Pe-f1l" secondAttribute="topMargin" constant="20" id="HHw-VU-WtX"/>
+                            <constraint firstItem="bgF-Tg-SUi" firstAttribute="top" secondItem="6YN-qf-bQk" secondAttribute="bottom" id="O2k-I3-8VR"/>
+                            <constraint firstItem="bgF-Tg-SUi" firstAttribute="top" secondItem="zqX-bv-ofx" secondAttribute="bottom" id="X98-Rj-PYg"/>
+                            <constraint firstItem="6YN-qf-bQk" firstAttribute="top" secondItem="WlS-Pe-f1l" secondAttribute="topMargin" constant="20" id="YLS-ID-Hr5"/>
+                            <constraint firstItem="bgF-Tg-SUi" firstAttribute="top" secondItem="1uL-2J-Z8O" secondAttribute="bottom" id="YZ1-TL-OFd"/>
+                            <constraint firstItem="1uL-2J-Z8O" firstAttribute="leading" secondItem="imn-mk-yto" secondAttribute="leading" id="dIr-yr-NY0"/>
+                            <constraint firstItem="zqX-bv-ofx" firstAttribute="top" secondItem="WlS-Pe-f1l" secondAttribute="topMargin" constant="20" id="e5g-To-fYQ"/>
+                            <constraint firstItem="imn-mk-yto" firstAttribute="trailing" secondItem="zqX-bv-ofx" secondAttribute="trailing" id="omr-ZW-RoB"/>
+                            <constraint firstItem="bgF-Tg-SUi" firstAttribute="centerX" secondItem="WlS-Pe-f1l" secondAttribute="centerX" id="qOT-yV-Qns"/>
+                            <constraint firstItem="zqX-bv-ofx" firstAttribute="leading" secondItem="imn-mk-yto" secondAttribute="leading" id="qUb-WI-ViG"/>
+                            <constraint firstItem="imn-mk-yto" firstAttribute="trailing" secondItem="1uL-2J-Z8O" secondAttribute="trailing" id="xPa-WU-Ece"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Приветствую!" id="wue-3f-Xgx">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Xys-Aa-fd3">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bkA-1j-PDN">
+                                <rect key="frame" x="356" y="5" width="54" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" image="basket.fill" catalog="system"/>
+                            </button>
+                            <connections>
+                                <segue destination="vck-cJ-HYc" kind="show" id="Web-Tu-89d"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="firstView" destination="6YN-qf-bQk" id="G9J-a9-5MN"/>
+                        <outlet property="secondView" destination="zqX-bv-ofx" id="bjt-hO-hBh"/>
+                        <outlet property="thirdView" destination="1uL-2J-Z8O" id="pbm-mc-7SK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dXi-3T-DLs" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="205.11627906976744" y="3.218884120171674"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F6I-qy-UqB">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Kv4-3c-Iaz" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" shadowImage="square.and.arrow.up" catalog="system" id="YvG-sa-HyQ">
+                        <rect key="frame" x="0.0" y="59" width="430" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Z9r-y9-IV2">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
+                    <connections>
+                        <segue destination="pkK-BA-i7G" kind="relationship" relationship="rootViewController" id="1hr-D1-VSm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X33-2R-VB3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-723.07692307692309" y="3.5545023696682461"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Y0Q-OJ-S9d">
+            <objects>
+                <viewController id="kgY-M4-ycc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Tk-Hn-37Y">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="744"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="nBG-qN-fvF">
+                                <rect key="frame" x="10" y="10" width="410" height="734"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="nice" translatesAutoresizingMaskIntoConstraints="NO" id="2C9-yI-fyb">
+                                        <rect key="frame" x="0.0" y="0.0" width="410" height="550"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Наш адрес:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rCB-OL-s2l">
+                                        <rect key="frame" x="0.0" y="560" width="410" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Город Туркестан, улица Тауке хана 234" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hD-Lk-323">
+                                        <rect key="frame" x="0.0" y="606" width="410" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Контакты:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dLa-5F-yNH">
+                                        <rect key="frame" x="0.0" y="640" width="410" height="36"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+7 708 931 8556                                                   +7 778 430 6412" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fWK-HT-Mzh">
+                                        <rect key="frame" x="0.0" y="686" width="410" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ig5-8I-dnq"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nBG-qN-fvF" firstAttribute="centerX" secondItem="4Tk-Hn-37Y" secondAttribute="centerX" id="EvW-oe-8Iw"/>
+                            <constraint firstItem="nBG-qN-fvF" firstAttribute="leading" secondItem="4Tk-Hn-37Y" secondAttribute="leading" constant="10" id="O43-dR-wph"/>
+                            <constraint firstAttribute="trailing" secondItem="nBG-qN-fvF" secondAttribute="trailing" constant="10" id="fF0-Tj-7fI"/>
+                            <constraint firstAttribute="bottom" secondItem="nBG-qN-fvF" secondAttribute="bottom" id="vhJ-Yt-Qd1"/>
+                            <constraint firstItem="nBG-qN-fvF" firstAttribute="top" secondItem="4Tk-Hn-37Y" secondAttribute="top" constant="10" id="yYC-DA-kO3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WwD-1e-qfk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="310"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="djC-MS-PW3">
+            <objects>
+                <viewController id="sWJ-vl-skW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Tha-cW-gd5">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="744"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lqn-yb-gdz">
+                                <rect key="frame" x="5" y="79" width="420" height="455"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kSp-W9-eYp">
+                                        <rect key="frame" x="0.0" y="0.0" width="420" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="hjT-sv-mHg"/>
+                                        </constraints>
+                                        <string key="text">Уважамые клиенты, специально для вас разыгрывается Макбук. Чтобы участвовать достаточно ввести ваш номер телефона. Результат привет в виде смс на ваш номер.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="macbook" translatesAutoresizingMaskIntoConstraints="NO" id="pPg-WG-L9S">
+                                        <rect key="frame" x="0.0" y="105" width="420" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="l8w-8F-Y6e"/>
+                                        </constraints>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0w-KS-YrH">
+                                        <rect key="frame" x="0.0" y="260" width="420" height="90"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9w-ML-yjf">
+                                                <rect key="frame" x="5" y="10" width="400" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="oEZ-Zm-dQj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ZEA-FJ-GZl">
+                                                <rect key="frame" x="5" y="60" width="400" height="4"/>
+                                            </progressView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="ZEA-FJ-GZl" firstAttribute="top" secondItem="D9w-ML-yjf" secondAttribute="bottom" constant="10" id="4Qh-3H-DXZ"/>
+                                            <constraint firstItem="D9w-ML-yjf" firstAttribute="top" secondItem="k0w-KS-YrH" secondAttribute="top" constant="10" id="L6b-Qc-Lxi"/>
+                                            <constraint firstItem="D9w-ML-yjf" firstAttribute="leading" secondItem="ZEA-FJ-GZl" secondAttribute="leading" id="LoD-Sl-XGo"/>
+                                            <constraint firstItem="D9w-ML-yjf" firstAttribute="trailing" secondItem="ZEA-FJ-GZl" secondAttribute="trailing" id="bgU-cK-YvI"/>
+                                            <constraint firstAttribute="height" constant="90" id="c2V-Mf-xWD"/>
+                                            <constraint firstAttribute="trailing" secondItem="D9w-ML-yjf" secondAttribute="trailing" constant="15" id="mhl-0I-LP9"/>
+                                            <constraint firstItem="D9w-ML-yjf" firstAttribute="leading" secondItem="k0w-KS-YrH" secondAttribute="leading" constant="5" id="v8O-LG-Bpb"/>
+                                        </constraints>
+                                    </view>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Укажите ваш номер" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6hG-0n-aia">
+                                        <rect key="frame" x="0.0" y="355" width="420" height="35"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZdR-bZ-QSZ">
+                                        <rect key="frame" x="0.0" y="395" width="420" height="60"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Участвовать">
+                                            <fontDescription key="titleFontDescription" type="system" pointSize="20"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fFU-79-qHC"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
+                        <constraints>
+                            <constraint firstItem="lqn-yb-gdz" firstAttribute="top" secondItem="fFU-79-qHC" secondAttribute="top" constant="20" id="144-Lq-OkP"/>
+                            <constraint firstAttribute="trailing" secondItem="lqn-yb-gdz" secondAttribute="trailing" constant="5" id="EUE-67-rAa"/>
+                            <constraint firstItem="fFU-79-qHC" firstAttribute="bottom" secondItem="lqn-yb-gdz" secondAttribute="bottom" constant="210" id="l05-1T-Cht"/>
+                            <constraint firstItem="lqn-yb-gdz" firstAttribute="leading" secondItem="fFU-79-qHC" secondAttribute="leading" constant="5" id="ojg-1S-k1W"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H8P-uY-JOP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2345.5813953488373" y="2.5751072961373391"/>
+        </scene>
+        <!--выа-->
+        <scene sceneID="Ww4-8O-XrD">
+            <objects>
+                <viewController id="xCE-QC-4li" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vwl-eN-aUH">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="675"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="euF-ru-eab">
+                                <rect key="frame" x="5" y="59" width="420" height="616"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hGn-Ay-h08">
+                                        <rect key="frame" x="0.0" y="0.0" width="420" height="150.33333333333334"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="macbook" translatesAutoresizingMaskIntoConstraints="NO" id="kQW-2c-n2h">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="150.33333333333334"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="20b-gV-UAI">
+                                                <rect key="frame" x="210" y="0.0" width="210" height="150.33333333333334"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9vt-4y-dL6">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="75"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Ноутбук Apple MacBook Pro 14 Space Gray M1 Pro / 16ГБ / 512SSD / 14.2 / Mac OS Monterey / (MKGP3RU/A)">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 119 990 тг" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mir-2b-ve8">
+                                                        <rect key="frame" x="0.0" y="75" width="210" height="75.333333333333314"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tOC-wE-hrk">
+                                        <rect key="frame" x="0.0" y="155.33333333333331" width="420" height="150.33333333333331"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lenovo" translatesAutoresizingMaskIntoConstraints="NO" id="uUd-Aw-wdh">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="150.33333333333334"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="edc-8a-0lh">
+                                                <rect key="frame" x="210" y="0.0" width="210" height="150.33333333333334"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkc-3w-nPd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="75"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Игровой ноутбук Lenovo Gaming 3 i7 11370H / 16ГБ / 512SSD / RTX3050 4ГБ / 15.6 / DOS / (82K1015URK)">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="629 990 тг" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IVc-MF-FHC">
+                                                        <rect key="frame" x="0.0" y="74.999999999999972" width="210" height="75.333333333333343"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="AO5-t2-aCL">
+                                        <rect key="frame" x="0.0" y="310.66666666666669" width="420" height="150"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="asus" translatesAutoresizingMaskIntoConstraints="NO" id="Kxq-aN-l9M">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="150"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="NGg-iB-7QN">
+                                                <rect key="frame" x="210" y="0.0" width="210" height="150"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EiG-6E-NET">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="75"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Ноутбук Asus TUF Gaming F17 i5 11400H / 16ГБ / 512SSD / RTX3060 6ГБ / 17.3 / DOS / (FX706HM-HX146)">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="709 990 тг" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yy5-Je-w13">
+                                                        <rect key="frame" x="0.0" y="75" width="210" height="75"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QAY-UZ-nWO">
+                                        <rect key="frame" x="0.0" y="465.66666666666657" width="420" height="150.33333333333331"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hp" translatesAutoresizingMaskIntoConstraints="NO" id="e9c-OS-5pa">
+                                                <rect key="frame" x="0.0" y="0.0" width="210" height="150.33333333333334"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Seb-lm-a56">
+                                                <rect key="frame" x="210" y="0.0" width="210" height="150.33333333333334"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5B7-MB-W8q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="210" height="75.333333333333329"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Игровой ноутбук HP VICTUS 16-d0003ur i5 11400 / 8ГБ / 512SSD / RTX3060 6 ГБ / 16.1 / Win11 / (64S72EA)">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="659 990 тг" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bqh-G5-hvv">
+                                                        <rect key="frame" x="0.0" y="75.333333333333371" width="210" height="75"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Kzf-Fg-LrO"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="euF-ru-eab" firstAttribute="leading" secondItem="vwl-eN-aUH" secondAttribute="leading" constant="5" id="Wjg-4N-u0L"/>
+                            <constraint firstAttribute="trailing" secondItem="euF-ru-eab" secondAttribute="trailing" constant="5" id="suP-WO-TAX"/>
+                            <constraint firstItem="euF-ru-eab" firstAttribute="top" secondItem="Kzf-Fg-LrO" secondAttribute="top" id="wba-RC-cmb"/>
+                            <constraint firstAttribute="bottom" secondItem="euF-ru-eab" secondAttribute="bottom" id="ztX-As-cDN"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="выа" style="editor" id="nTP-ow-Epn"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l80-bP-Z8z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1786.046511627907" y="-948.28326180257523"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Qra-d5-cQY">
+            <objects>
+                <viewController id="vck-cJ-HYc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a4F-2y-0Xt">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="G3k-DB-jCb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zbT-zs-00N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5cM-fi-mYz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2610" y="-938"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Rvf-5o-gLY">
+            <objects>
+                <viewController id="wok-44-Fhg" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LrY-wk-0PA">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="675"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="bmR-rn-Jjq">
+                                <rect key="frame" x="10" y="59" width="410" height="616"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="ext-2C-DIH">
+                                        <rect key="frame" x="0.0" y="0.0" width="410" height="150.33333333333334"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iphone14" translatesAutoresizingMaskIntoConstraints="NO" id="gOO-DZ-ndT">
+                                                <rect key="frame" x="0.0" y="0.0" width="205" height="150.33333333333334"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="y0K-ef-BW8">
+                                                <rect key="frame" x="205" y="0.0" width="205" height="150.33333333333334"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ius-dx-aXN">
+                                                        <rect key="frame" x="0.0" y="0.0" width="205" height="75"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Смартфон Apple iPhone 14 Pro 128GB Space Black">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="699 990 тг" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qp1-TP-kEV">
+                                                        <rect key="frame" x="0.0" y="75" width="205" height="75.333333333333314"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="47g-nL-zeP">
+                                        <rect key="frame" x="0.0" y="155.33333333333331" width="410" height="150.33333333333331"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="samsung" translatesAutoresizingMaskIntoConstraints="NO" id="ghc-Ww-prt">
+                                                <rect key="frame" x="0.0" y="0.0" width="205" height="150.33333333333334"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="PcG-ZK-3ig">
+                                                <rect key="frame" x="205" y="0.0" width="205" height="150.33333333333334"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rO0-U0-Cup">
+                                                        <rect key="frame" x="0.0" y="0.0" width="205" height="75"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Смартфон Samsung Galaxy S22 256GB Phantom Black">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="449 990 тг" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbi-eV-VQn">
+                                                        <rect key="frame" x="0.0" y="74.999999999999972" width="205" height="75.333333333333343"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Pfd-C0-TlH">
+                                        <rect key="frame" x="0.0" y="310.66666666666669" width="410" height="150"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xiaomi" translatesAutoresizingMaskIntoConstraints="NO" id="7f4-Uh-Eoz">
+                                                <rect key="frame" x="0.0" y="0.0" width="205" height="150"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-uJ-h9k">
+                                                <rect key="frame" x="205" y="0.0" width="205" height="150"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ncs-ex-IdP">
+                                                        <rect key="frame" x="0.0" y="0.0" width="205" height="75"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Смартфон Xiaomi 12T Pro 256GB/12GB Black"/>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="389 990 тг" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mC4-RN-a5S">
+                                                        <rect key="frame" x="0.0" y="75" width="205" height="75"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="iri-Dg-7gM">
+                                        <rect key="frame" x="0.0" y="465.66666666666657" width="410" height="150.33333333333331"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="poco" translatesAutoresizingMaskIntoConstraints="NO" id="EaV-h4-g2m">
+                                                <rect key="frame" x="0.0" y="0.0" width="205" height="150.33333333333334"/>
+                                            </imageView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="XPv-hx-sTG">
+                                                <rect key="frame" x="205" y="0.0" width="205" height="150.33333333333334"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OAr-rT-HRV">
+                                                        <rect key="frame" x="0.0" y="0.0" width="205" height="75.333333333333329"/>
+                                                        <state key="normal" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title="Смартфон Poco F4 GT 256GB Cyber Yellow">
+                                                            <fontDescription key="titleFontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        </buttonConfiguration>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="399 990 тг" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lb2-P6-oyd">
+                                                        <rect key="frame" x="0.0" y="75.333333333333371" width="205" height="75"/>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="9UP-4H-6cM"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bmR-rn-Jjq" firstAttribute="leading" secondItem="9UP-4H-6cM" secondAttribute="leading" constant="10" id="3iK-0s-VQ3"/>
+                            <constraint firstItem="9UP-4H-6cM" firstAttribute="trailing" secondItem="bmR-rn-Jjq" secondAttribute="trailing" constant="10" id="Isi-eT-fYW"/>
+                            <constraint firstItem="9UP-4H-6cM" firstAttribute="bottom" secondItem="bmR-rn-Jjq" secondAttribute="bottom" id="pLk-Ub-4J3"/>
+                            <constraint firstItem="bmR-rn-Jjq" firstAttribute="top" secondItem="9UP-4H-6cM" secondAttribute="top" id="s0g-qB-cWn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="xGf-bM-hi0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="poh-k5-8II" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="974" y="-948"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mrZ-Ut-vwh">
+            <objects>
+                <viewController id="lzn-8t-AHL" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FD2-sa-MEy">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="744"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zX9-d5-AAd">
+                                <rect key="frame" x="10" y="10" width="410" height="734"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Добро пожаловать!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3tD-Xi-gwo">
+                                        <rect key="frame" x="0.0" y="0.0" width="410" height="57.333333333333336"/>
+                                        <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Загляни к нам. Тут ты найдешь то что тебе нужно!" translatesAutoresizingMaskIntoConstraints="NO" id="WTg-xt-adx">
+                                        <rect key="frame" x="0.0" y="67.333333333333343" width="410" height="488.33333333333326"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="MqT-LP-j63">
+                                        <rect key="frame" x="0.0" y="565.66666666666663" width="410" height="168.33333333333337"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZ2-J5-okt">
+                                                <rect key="frame" x="0.0" y="0.0" width="410" height="79.333333333333329"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" image="iphone.homebutton" catalog="system" title="Смартфон"/>
+                                                <connections>
+                                                    <segue destination="wok-44-Fhg" kind="show" id="2DV-kG-UVg"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvm-Lv-B1I">
+                                                <rect key="frame" x="0.0" y="89.333333333333371" width="410" height="79"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" image="laptopcomputer" catalog="system" title="Ноутбук"/>
+                                                <connections>
+                                                    <segue destination="xCE-QC-4li" kind="show" id="TNm-qw-GpH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="CF1-nY-dTd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="zX9-d5-AAd" firstAttribute="leading" secondItem="FD2-sa-MEy" secondAttribute="leading" constant="10" id="5Qr-iy-Jcx"/>
+                            <constraint firstItem="zX9-d5-AAd" firstAttribute="top" secondItem="FD2-sa-MEy" secondAttribute="top" constant="10" id="OSB-1w-axk"/>
+                            <constraint firstAttribute="bottom" secondItem="zX9-d5-AAd" secondAttribute="bottom" id="b9B-3W-2WX"/>
+                            <constraint firstAttribute="trailing" secondItem="zX9-d5-AAd" secondAttribute="trailing" constant="10" id="gXi-qz-T08"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A7O-Kp-L9B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002" y="-323"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="asus" width="193.33332824707031" height="149"/>
+        <image name="basket.fill" catalog="system" width="128" height="108"/>
+        <image name="hp" width="177.33332824707031" height="147.33332824707031"/>
+        <image name="iphone.homebutton" catalog="system" width="112" height="128"/>
+        <image name="iphone14" width="174.33332824707031" height="203.33332824707031"/>
+        <image name="laptopcomputer" catalog="system" width="128" height="71"/>
+        <image name="lenovo" width="184.33332824707031" height="156.33332824707031"/>
+        <image name="macbook" width="203.33332824707031" height="132.33332824707031"/>
+        <image name="nice" width="75" height="75"/>
+        <image name="poco" width="140.33332824707031" height="196.33332824707031"/>
+        <image name="samsung" width="148.33332824707031" height="190"/>
+        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
+        <image name="xiaomi" width="139" height="195"/>
+        <image name="Загляни к нам. Тут ты найдешь то что тебе нужно!" width="256" height="256"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
